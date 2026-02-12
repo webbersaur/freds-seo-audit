@@ -41,8 +41,6 @@ Fred's Tree Removal has a solid local reputation (4.9/5 on Angi, A+ BBB rating, 
 
 4. **Thin Content**: Pages appear to have very little actual text content relative to code. Google's helpful content update penalizes thin pages.
 
-5. **"Sample Page" Still Live**: `/sample-page/` is a default WordPress page that was never removed -- signals an unmaintained site to both users and search engines.
-
 ---
 
 ## 2. ON-PAGE SEO AUDIT
@@ -222,7 +220,6 @@ The business appears on multiple directories, which is good. However, the name i
 | Fix H1 tags on all pages | $200-400 | High |
 | Write proper meta titles & descriptions for all 15 pages | $300-500 | High |
 | Add full NAP (Name, Address, Phone) to header/footer with schema | $200-400 | High |
-| Remove /sample-page/ | $0 (DIY) | Low |
 | Fix business name consistency across all directories | $300-500 | High |
 | Add click-to-call phone number in header | $100-200 | High |
 | Add LocalBusiness structured data (JSON-LD) | $200-400 | High |
@@ -320,7 +317,6 @@ The business appears on multiple directories, which is good. However, the name i
 - [ ] Set up Google Search Console & Google Analytics 4
 - [ ] Claim/verify Google Business Profile ownership
 - [ ] Fix NAP consistency across all directories
-- [ ] Remove /sample-page/
 - [ ] Add phone number + CTA to every page header
 
 ### Month 2-3: Content Build-Out
