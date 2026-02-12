@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Audit Report — Fred's Tree Removal CT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a3a2a;
+    --forest-deep: #0f2218;
+    --forest-mid: #2d5a3f;
+    --sage: #6b8f71;
+    --sage-light: #a3c4a3;
+    --cream: #faf7f2;
+    --cream-dark: #f0ebe3;
+    --paper: #f5f1eb;
+    --ink: #1a1a18;
+    --ink-light: #4a4a45;
+    --ink-muted: #7a7a72;
+    --rust: #c44e2e;
+    --rust-light: #e8734f;
+    --amber: #d4940a;
+    --amber-light: #f0c94d;
+    --emerald: #2a8f5a;
+    --emerald-light: #4cc97a;
+    --red-bg: #fef2f0;
+    --amber-bg: #fef9ed;
+    --green-bg: #f0faf4;
+    --blue: #2a6fa8;
+    --blue-light: #e8f2fb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === COVER === */
+  .cover {
+    background: var(--forest-deep);
+    color: var(--cream);
+    padding: 80px 60px 60px;
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(107,143,113,0.15) 0%, transparent 70%);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--emerald), var(--sage-light), var(--amber));
+  }
+  .cover-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .cover h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 12px;
+    max-width: 700px;
+  }
+  .cover h1 em {
+    color: var(--sage-light);
+    font-style: italic;
+  }
+  .cover-meta {
+    font-size: 14px;
+    color: var(--sage);
+    margin-top: 24px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cover-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cover-meta .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  /* === LAYOUT === */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* === GRADE BANNER === */
+  .grade-banner {
+    background: var(--forest-deep);
+    border-bottom: 3px solid var(--rust);
+    padding: 40px 0;
+  }
+  .grade-inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .grade-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--rust);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .grade-letter {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    color: var(--rust-light);
+  }
+  .grade-text {
+    color: var(--cream);
+    flex: 1;
+    min-width: 280px;
+  }
+  .grade-text h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .grade-text p {
+    font-size: 14px;
+    color: var(--sage);
+    line-height: 1.6;
+  }
+  .grade-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .grade-stat {
+    text-align: center;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .grade-stat .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: #fff;
+    display: block;
+  }
+  .grade-stat .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--sage);
+    margin-top: 2px;
+  }
+
+  /* === SECTIONS === */
+  section {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  section:last-child { border-bottom: none; }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--sage);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  h2.section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--forest-deep);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .section-subtitle {
+    font-size: 15px;
+    color: var(--ink-muted);
+    margin-bottom: 36px;
+  }
+  h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--forest);
+    margin: 32px 0 16px;
+  }
+  h3:first-of-type { margin-top: 0; }
+
+  p { margin-bottom: 14px; }
+
+  /* === TABLES === */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 20px 0 28px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  thead {
+    background: var(--forest-deep);
+    color: var(--cream);
+  }
+  thead th {
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: rgba(107,143,113,0.04); }
+
+  /* Severity badges */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .badge-critical {
+    background: var(--rust);
+    color: #fff;
+  }
+  .badge-high {
+    background: var(--amber);
+    color: #fff;
+  }
+  .badge-medium {
+    background: var(--blue);
+    color: #fff;
+  }
+  .badge-low {
+    background: var(--sage);
+    color: #fff;
+  }
+  .badge-ok {
+    background: var(--emerald);
+    color: #fff;
+  }
+
+  /* === ISSUE CARDS === */
+  .issue-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 14px 0;
+    border-left: 4px solid var(--rust);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .issue-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--forest-deep);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .issue-card h4 .issue-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: var(--rust);
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .issue-card p {
+    color: var(--ink-light);
+    font-size: 14px;
+    margin: 0;
+    padding-left: 34px;
+  }
+
+  /* === COMPARISON GRID === */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .comp-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .comp-card-header {
+    padding: 20px 24px 16px;
+    background: var(--forest-deep);
+    color: #fff;
+  }
+  .comp-card-header h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+  .comp-card-header .comp-url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--sage-light);
+  }
+  .comp-card-header .comp-grade {
+    float: right;
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    margin-top: -4px;
+  }
+  .comp-card-body {
+    padding: 20px 24px;
+  }
+  .comp-card-body .comp-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .comp-card-body .comp-row:last-child { border-bottom: none; }
+  .comp-card-body .comp-label { color: var(--ink-muted); }
+  .comp-card-body .comp-value { font-weight: 600; color: var(--forest); }
+  .comp-card .comp-strengths {
+    padding: 0 24px 20px;
+  }
+  .comp-card .comp-strengths h5 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  .comp-card .comp-strengths ul {
+    list-style: none;
+    padding: 0;
+  }
+  .comp-card .comp-strengths li {
+    font-size: 13px;
+    padding: 3px 0;
+    padding-left: 16px;
+    position: relative;
+    color: var(--ink-light);
+  }
+  .comp-card .comp-strengths li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    color: var(--emerald);
+    font-weight: 700;
+  }
+
+  /* === POSITIONING CHART === */
+  .chart-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    margin: 24px 0;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .quadrant {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+  }
+  .quadrant-axis-x, .quadrant-axis-y {
+    position: absolute;
+    background: var(--ink);
+  }
+  .quadrant-axis-x {
+    left: 0; right: 0;
+    top: 50%;
+    height: 1px;
+  }
+  .quadrant-axis-y {
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 1px;
+  }
+  .quadrant-label {
+    position: absolute;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+  .ql-top { top: 8px; left: 50%; transform: translateX(-50%); }
+  .ql-bottom { bottom: 8px; left: 50%; transform: translateX(-50%); }
+  .ql-left { left: 8px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: center; }
+  .ql-right { right: 8px; top: 50%; transform: translateY(-50%) rotate(90deg); transform-origin: center; }
+  .q-dot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+  }
+  .q-dot .dot-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 auto 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .q-dot .dot-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .q-dot .dot-sublabel {
+    font-size: 10px;
+    color: var(--ink-muted);
+  }
+  .q-zone {
+    position: absolute;
+    border-radius: 8px;
+    opacity: 0.06;
+  }
+
+  /* === KEYWORD TABLE === */
+  .kw-competition {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  .kw-low { background: var(--emerald); }
+  .kw-med { background: var(--amber); }
+  .kw-high { background: var(--rust); }
+
+  /* === TIER CARDS === */
+  .tier {
+    background: #fff;
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .tier-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    background: var(--forest-deep);
+    color: #fff;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .tier-header h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tier-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: rgba(255,255,255,0.15);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .tier-cost {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--amber-light);
+    font-weight: 500;
+  }
+  .tier table { font-size: 13px; }
+  .tier thead { background: rgba(26,58,42,0.06); color: var(--ink); }
+  .tier thead th { font-size: 11px; padding: 10px 18px; }
+
+  /* === INVESTMENT CARDS === */
+  .invest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .invest-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    position: relative;
+  }
+  .invest-card.recommended {
+    border-color: var(--emerald);
+    box-shadow: 0 0 0 2px var(--emerald), 0 4px 12px rgba(42,143,90,0.12);
+  }
+  .invest-card.recommended::before {
+    content: 'RECOMMENDED';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--emerald);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .invest-card-header {
+    padding: 28px 28px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .invest-card-header .option-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--sage);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .invest-card-header h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--forest-deep);
+  }
+  .invest-card-prices {
+    padding: 20px 28px;
+    display: flex;
+    gap: 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .invest-card-prices .price-block .price-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ink-muted);
+    margin-bottom: 2px;
+  }
+  .invest-card-prices .price-block .price-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--forest);
+  }
+  .invest-card-body {
+    padding: 20px 28px;
+  }
+  .invest-card-body ul {
+    list-style: none;
+    padding: 0;
+  }
+  .invest-card-body li {
+    font-size: 13px;
+    padding: 4px 0 4px 20px;
+    position: relative;
+    color: var(--ink-light);
+  }
+  .invest-card-body li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sage-light);
+  }
+  .invest-card-impact {
+    padding: 16px 28px;
+    background: var(--green-bg);
+    font-size: 13px;
+    color: var(--forest);
+    font-weight: 500;
+  }
+
+  /* === TIMELINE === */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+    margin: 24px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--emerald), var(--sage), var(--amber));
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--forest);
+    border: 3px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--forest);
+  }
+  .timeline-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 10px;
+  }
+  .timeline-item ul {
+    list-style: none;
+    padding: 0;
+  }
+  .timeline-item li {
+    font-size: 13px;
+    padding: 4px 0 4px 22px;
+    position: relative;
+    color: var(--ink-light);
+  }
+  .timeline-item li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--sage);
+    border-radius: 3px;
+  }
+
+  /* === TAKEAWAY LIST === */
+  .takeaway {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    align-items: flex-start;
+  }
+  .takeaway:last-child { border-bottom: none; }
+  .takeaway-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--sage);
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .takeaway-text {
+    font-size: 15px;
+    color: var(--ink-light);
+  }
+  .takeaway-text strong {
+    color: var(--forest-deep);
+  }
+
+  /* === ROI CALLOUT === */
+  .roi-callout {
+    background: linear-gradient(135deg, var(--forest-deep), var(--forest-mid));
+    color: #fff;
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin: 32px 0;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .roi-callout .roi-big {
+    font-family: 'DM Serif Display', serif;
+    font-size: 56px;
+    color: var(--amber-light);
+    line-height: 1;
+  }
+  .roi-callout .roi-label {
+    font-size: 14px;
+    color: var(--sage-light);
+  }
+  .roi-callout .roi-detail {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    flex: 1;
+    min-width: 250px;
+  }
+
+  /* === LONG TAIL LIST === */
+  .longtail-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .longtail-list .lt-chip {
+    background: var(--green-bg);
+    border: 1px solid rgba(42,143,90,0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--forest);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+
+  /* === LOCATION PILLS === */
+  .location-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .location-pills .pill {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .pill-active { background: var(--forest-deep); color: #fff; }
+  .pill-missing { background: var(--red-bg); color: var(--rust); border: 1px dashed var(--rust); }
+
+  /* === FOOTER === */
+  .report-footer {
+    background: var(--forest-deep);
+    color: var(--sage);
+    padding: 40px 0;
+    font-size: 13px;
+  }
+  .report-footer a {
+    color: var(--sage-light);
+    text-decoration: none;
+  }
+  .report-footer a:hover { text-decoration: underline; }
+  .sources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .sources-grid a {
+    display: block;
+    padding: 4px 0;
+    font-size: 12px;
+  }
+
+  /* === HOMEPAGE TABLE SPECIAL === */
+  .onpage-table tbody td:nth-child(2) {
+    color: var(--rust);
+    font-style: italic;
+  }
+  .onpage-table tbody td:nth-child(3) {
+    color: var(--emerald);
+    font-size: 13px;
+  }
+
+  /* === CONTENT GAP ICON === */
+  .gap-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+
+  /* === NAP CALLOUT === */
+  .nap-callout {
+    background: var(--amber-bg);
+    border: 1px solid rgba(212,148,10,0.2);
+    border-left: 4px solid var(--amber);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: var(--ink-light);
+  }
+  .nap-callout strong { color: var(--ink); }
+
+  /* === PRINT === */
+  @media print {
+    body { font-size: 12px; }
+    .cover { min-height: auto; padding: 40px; }
+    section { padding: 30px 0; }
+    .container { padding: 0 20px; }
+    .tier, .invest-card, .comp-card, .chart-container { break-inside: avoid; }
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .cover { padding: 40px 24px; }
+    .container { padding: 0 20px; }
+    .grade-inner { flex-direction: column; text-align: center; }
+    .grade-stats { justify-content: center; }
+    .chart-container { padding: 20px; }
+    .quadrant { max-width: 320px; }
+    .q-dot .dot-circle { width: 36px; height: 36px; font-size: 9px; }
+    .roi-callout { flex-direction: column; text-align: center; padding: 28px 24px; }
+    .roi-callout .roi-big { font-size: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<header class="cover">
+  <div class="cover-label">SEO Audit Report</div>
+  <h1>Fred's Tree Removal <em>CT</em></h1>
+  <div class="cover-meta">
+    <span><span class="dot"></span> fredstreeremovalct.com</span>
+    <span><span class="dot"></span> February 2026</span>
+    <span><span class="dot"></span> Branford, Connecticut</span>
+  </div>
+</header>
+
+<!-- ===== GRADE BANNER ===== -->
+<div class="grade-banner">
+  <div class="container">
+    <div class="grade-inner">
+      <div class="grade-circle">
+        <span class="grade-letter">D+</span>
+      </div>
+      <div class="grade-text">
+        <h2>Overall SEO Grade</h2>
+        <p>Fred's Tree Removal has a solid local reputation (4.9/5 on Angi, A+ BBB rating, 28 years in business) but the website is significantly underperforming. The site has critical technical and content gaps that are likely costing the business <strong style="color:#f0c94d">20&ndash;40+ leads per month</strong> in organic search traffic.</p>
+      </div>
+      <div class="grade-stats">
+        <div class="grade-stat">
+          <span class="num">4.9</span>
+          <span class="label">Angi Rating</span>
+        </div>
+        <div class="grade-stat">
+          <span class="num">A+</span>
+          <span class="label">BBB Grade</span>
+        </div>
+        <div class="grade-stat">
+          <span class="num">28</span>
+          <span class="label">Years in Biz</span>
+        </div>
+        <div class="grade-stat">
+          <span class="num">15</span>
+          <span class="label">Pages Indexed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 1: TECHNICAL SEO ===== -->
+<div class="container">
+<section>
+  <div class="section-num">Section 01</div>
+  <h2 class="section-title">Technical SEO Audit</h2>
+  <p class="section-subtitle">Crawlability, indexing, site structure, and core infrastructure</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Element</th><th>Status</th><th>Severity</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SSL Certificate (HTTPS)</td><td>Installed</td><td><span class="badge badge-ok">OK</span></td></tr>
+        <tr><td>robots.txt</td><td>Present, correct</td><td><span class="badge badge-ok">OK</span></td></tr>
+        <tr><td>XML Sitemap</td><td>Present (Yoast)</td><td><span class="badge badge-ok">OK</span></td></tr>
+        <tr><td>Mobile Responsive</td><td>Yes (Divi theme)</td><td><span class="badge badge-ok">OK</span></td></tr>
+        <tr><td><strong>H1 Tags</strong></td><td>Missing / not visible</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td><strong>Meta Descriptions</strong></td><td>Missing on most pages</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td>Page Speed</td><td>Heavy CSS/JS (Divi bloat)</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Schema Markup</td><td>Basic (Organization, WebPage)</td><td><span class="badge badge-medium">Medium</span></td></tr>
+        <tr><td>Image Alt Tags</td><td>Not detected</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Content-to-Code Ratio</td><td>Very low</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td><strong>Last Updated (core pages)</strong></td><td>March 2022 (3+ years ago)</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td>Total Indexed Pages</td><td>15</td><td><span class="badge badge-low">Low</span></td></tr>
+        <tr><td>Blog / Content Hub</td><td>None</td><td><span class="badge badge-high">High</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Critical Issues</h3>
+
+  <div class="issue-card">
+    <h4><span class="issue-num">1</span> Stale Content</h4>
+    <p>The homepage and core pages (Services, About, Contact) haven't been updated since March 2022. Google deprioritizes stale content. Location pages were added in March 2025, which is good, but the core site is outdated.</p>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-num">2</span> Missing/Broken Heading Structure</h4>
+    <p>H1 tags are not rendering properly in the page markup. This is the single most important on-page SEO element &mdash; search engines use it to understand what each page is about.</p>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-num">3</span> Divi Theme Bloat</h4>
+    <p>The site uses Divi (v4.27.5), which loads excessive inline CSS and JavaScript. This hurts Core Web Vitals scores (page speed, layout shift) which are direct Google ranking factors.</p>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-num">4</span> Thin Content</h4>
+    <p>Pages appear to have very little actual text content relative to code. Google's helpful content update penalizes thin pages.</p>
+  </div>
+  <div class="issue-card">
+    <h4><span class="issue-num">5</span> &ldquo;Sample Page&rdquo; Still Live</h4>
+    <p><code>/sample-page/</code> is a default WordPress page that was never removed &mdash; signals an unmaintained site to both users and search engines.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: ON-PAGE SEO ===== -->
+<section>
+  <div class="section-num">Section 02</div>
+  <h2 class="section-title">On-Page SEO Audit</h2>
+  <p class="section-subtitle">Title tags, meta descriptions, content quality, and page-level optimization</p>
+
+  <h3>Homepage Analysis</h3>
+
+  <div class="table-wrap">
+    <table class="onpage-table">
+      <thead>
+        <tr><th>Element</th><th>Current State</th><th>Best Practice</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Title Tag</td>
+          <td>&ldquo;Home - Fred's Tree Removal&rdquo;</td>
+          <td>&ldquo;Fred's Tree Removal - Branford CT | Tree Services &amp; Stump Grinding&rdquo;</td>
+        </tr>
+        <tr>
+          <td>Meta Description</td>
+          <td>&ldquo;Tree Removal Branford CT&rdquo; (only 22 chars)</td>
+          <td>150-160 chars with keywords + CTA</td>
+        </tr>
+        <tr>
+          <td>H1</td>
+          <td>Not detected</td>
+          <td>Should contain primary keyword</td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td>Not visible in markup</td>
+          <td>In header, clickable (tel: link)</td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>Not visible</td>
+          <td>In footer with schema markup</td>
+        </tr>
+        <tr>
+          <td>Services Listed</td>
+          <td>Not visible</td>
+          <td>Prominently displayed</td>
+        </tr>
+        <tr>
+          <td>Customer Reviews</td>
+          <td>None shown</td>
+          <td>Display Google/Yelp ratings</td>
+        </tr>
+        <tr>
+          <td>CTA Buttons</td>
+          <td>Not detected</td>
+          <td>&ldquo;Get Free Estimate&rdquo; prominently</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Location Pages</h3>
+  <p>The site has 8 location-specific pages added in March 2025. Here's what's covered vs. what's missing:</p>
+
+  <div class="location-pills">
+    <span class="pill pill-active">Branford</span>
+    <span class="pill pill-active">East Haven</span>
+    <span class="pill pill-active">Guilford</span>
+    <span class="pill pill-active">North Branford</span>
+    <span class="pill pill-missing">Madison</span>
+    <span class="pill pill-missing">North Haven</span>
+    <span class="pill pill-missing">Hamden</span>
+    <span class="pill pill-missing">Wallingford</span>
+    <span class="pill pill-missing">New Haven</span>
+    <span class="pill pill-missing">Milford</span>
+    <span class="pill pill-missing">Orange</span>
+    <span class="pill pill-missing">Woodbridge</span>
+  </div>
+
+  <div class="nap-callout">
+    <strong>Keyword cannibalization risk:</strong> Each town has both a "tree removal [city]" AND "tree services [city]" page. These compete against each other in Google rankings. Consolidate into one strong page per town.
+  </div>
+</section>
+
+<!-- ===== SECTION 3: LOCAL SEO ===== -->
+<section>
+  <div class="section-num">Section 03</div>
+  <h2 class="section-title">Local SEO Audit</h2>
+  <p class="section-subtitle">Google Business Profile, citations, NAP consistency, and directory presence</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Directory / Platform</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Google Business Profile</td><td>Listed (as &ldquo;Fred's Landscape &amp; Tree Removal LLC&rdquo;)</td></tr>
+        <tr><td>BBB</td><td>A+ (accredited since 2015)</td></tr>
+        <tr><td>Angi</td><td>4.9 / 5</td></tr>
+        <tr><td>Yelp</td><td>Listed</td></tr>
+        <tr><td>Nextdoor</td><td>Listed</td></tr>
+        <tr><td>Yellow Pages</td><td>Listed</td></tr>
+        <tr><td>Alignable</td><td>Listed</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="nap-callout">
+    <strong>Critical NAP Inconsistency:</strong> The website says <strong>&ldquo;Fred's Tree Removal&rdquo;</strong> but directories list <strong>&ldquo;Fred's Landscape &amp; Tree Removal LLC.&rdquo;</strong> This discrepancy hurts local pack rankings. Google uses Name, Address, Phone (NAP) consistency as a major ranking signal. Standardize the business name across all platforms immediately.
+  </div>
+
+  <h3>Additional Local SEO Issues</h3>
+  <ul style="margin-left: 20px; color: var(--ink-light); font-size: 14px;">
+    <li style="margin-bottom: 6px;">No Google Reviews widget on the website</li>
+    <li style="margin-bottom: 6px;">No review generation strategy visible</li>
+    <li style="margin-bottom: 6px;">Missing structured LocalBusiness schema with full NAP data</li>
+  </ul>
+</section>
+
+<!-- ===== SECTION 4: CONTENT ===== -->
+<section>
+  <div class="section-num">Section 04</div>
+  <h2 class="section-title">Content Audit</h2>
+  <p class="section-subtitle">Content inventory, gaps, and opportunities</p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 24px 0;">
+    <div style="background:#fff; border-radius:8px; padding:18px; text-align:center; border:1px solid rgba(0,0,0,0.06);">
+      <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--forest-deep);">15</div>
+      <div style="font-size:11px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:1px;">Total Pages</div>
+    </div>
+    <div style="background:#fff; border-radius:8px; padding:18px; text-align:center; border:1px solid rgba(0,0,0,0.06);">
+      <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--rust);">0</div>
+      <div style="font-size:11px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:1px;">Blog Posts</div>
+    </div>
+    <div style="background:#fff; border-radius:8px; padding:18px; text-align:center; border:1px solid rgba(0,0,0,0.06);">
+      <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--rust);">0</div>
+      <div style="font-size:11px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:1px;">FAQ Pages</div>
+    </div>
+    <div style="background:#fff; border-radius:8px; padding:18px; text-align:center; border:1px solid rgba(0,0,0,0.06);">
+      <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--rust);">0</div>
+      <div style="font-size:11px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:1px;">Testimonials</div>
+    </div>
+    <div style="background:#fff; border-radius:8px; padding:18px; text-align:center; border:1px solid rgba(0,0,0,0.06);">
+      <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--rust);">0</div>
+      <div style="font-size:11px; color:var(--ink-muted); text-transform:uppercase; letter-spacing:1px;">Gallery</div>
+    </div>
+  </div>
+
+  <h3>Content Gaps</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Missing Content</th><th>SEO Value</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Individual service pages (pruning, stump grinding, emergency, lot clearing)</td><td>High</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td>Blog with seasonal content</td><td>High</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>FAQ page (targets voice search)</td><td>High</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Testimonials / reviews page</td><td>High</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Storm damage resources</td><td>High</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Town-specific landing pages (5-8 missing)</td><td>High</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Before/after gallery</td><td>Medium</td><td><span class="badge badge-medium">Medium</span></td></tr>
+        <tr><td>Financing / pricing guide</td><td>Medium</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: COMPETITOR ANALYSIS ===== -->
+<section>
+  <div class="section-num">Section 05</div>
+  <h2 class="section-title">Competitor Analysis</h2>
+  <p class="section-subtitle">Direct competitors in the Branford / New Haven Shoreline market</p>
+
+  <div class="comparison-grid">
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <span class="comp-grade" style="color: var(--emerald-light);">B+</span>
+        <h4>J. Witkowsky &amp; Sons</h4>
+        <div class="comp-url">jwitkowskytree.com</div>
+      </div>
+      <div class="comp-card-body">
+        <div class="comp-row"><span class="comp-label">In business since</span><span class="comp-value">1995</span></div>
+        <div class="comp-row"><span class="comp-label">Service area</span><span class="comp-value">North Branford, Shoreline</span></div>
+        <div class="comp-row"><span class="comp-label">Key differentiator</span><span class="comp-value">Review social proof</span></div>
+      </div>
+      <div class="comp-strengths">
+        <h5>SEO Strengths</h5>
+        <ul>
+          <li>Certified arborist credentials</li>
+          <li>Strong heading structure &amp; schema</li>
+          <li>Google review integration (5-star badges)</li>
+          <li>Multiple location + service pages</li>
+          <li>Prominent phone number &amp; CTAs</li>
+          <li>Financing options offered</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <span class="comp-grade" style="color: var(--emerald-light);">B+</span>
+        <h4>Stumpbuster LLC</h4>
+        <div class="comp-url">stumpbuster.com</div>
+      </div>
+      <div class="comp-card-body">
+        <div class="comp-row"><span class="comp-label">In business since</span><span class="comp-value">1985 (40+ yrs)</span></div>
+        <div class="comp-row"><span class="comp-label">Service area</span><span class="comp-value">New Haven County</span></div>
+        <div class="comp-row"><span class="comp-label">Key differentiator</span><span class="comp-value">Longevity + trust signals</span></div>
+      </div>
+      <div class="comp-strengths">
+        <h5>SEO Strengths</h5>
+        <ul>
+          <li>Keyword-optimized title tags</li>
+          <li>Compelling meta descriptions</li>
+          <li>12+ location areas listed</li>
+          <li>Full NAP visible everywhere</li>
+          <li>Robust schema markup</li>
+          <li>Testimonials throughout site</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <span class="comp-grade" style="color: var(--amber-light);">B</span>
+        <h4>Rayzor's Edge Tree Service</h4>
+        <div class="comp-url">rayzorsedgetreeservice.com</div>
+      </div>
+      <div class="comp-card-body">
+        <div class="comp-row"><span class="comp-label">Coverage</span><span class="comp-value">Fairfield &amp; New Haven</span></div>
+        <div class="comp-row"><span class="comp-label">Key differentiator</span><span class="comp-value">Licensed arborist branding</span></div>
+      </div>
+      <div class="comp-strengths">
+        <h5>SEO Strengths</h5>
+        <ul>
+          <li>Licensed arborist emphasis</li>
+          <li>Professional branding</li>
+          <li>County-level geographic targeting</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <span class="comp-grade" style="color: var(--rust-light);">D+</span>
+        <h4>Fred's Tree Removal</h4>
+        <div class="comp-url">fredstreeremovalct.com</div>
+      </div>
+      <div class="comp-card-body">
+        <div class="comp-row"><span class="comp-label">In business since</span><span class="comp-value">1997 (28 yrs)</span></div>
+        <div class="comp-row"><span class="comp-label">Service area</span><span class="comp-value">Branford, Shoreline</span></div>
+        <div class="comp-row"><span class="comp-label">Key differentiator</span><span class="comp-value">Strong offline reputation</span></div>
+      </div>
+      <div class="comp-strengths">
+        <h5>SEO Weaknesses</h5>
+        <ul>
+          <li style="color:var(--rust);">Missing H1 tags &amp; meta descriptions</li>
+          <li style="color:var(--rust);">No reviews shown on website</li>
+          <li style="color:var(--rust);">Thin content across all pages</li>
+          <li style="color:var(--rust);">NAP inconsistency across directories</li>
+          <li style="color:var(--rust);">No blog, FAQ, or testimonials</li>
+          <li style="color:var(--rust);">Core pages 3+ years stale</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3>Competitive Positioning</h3>
+  <div class="chart-container">
+    <div class="quadrant">
+      <!-- Axes -->
+      <div class="quadrant-axis-x"></div>
+      <div class="quadrant-axis-y"></div>
+      <!-- Labels -->
+      <span class="quadrant-label ql-top">High Online Visibility</span>
+      <span class="quadrant-label ql-bottom">Low Online Visibility</span>
+      <span class="quadrant-label ql-left">Low Reputation</span>
+      <span class="quadrant-label ql-right">High Reputation</span>
+      <!-- Zones -->
+      <div class="q-zone" style="top:4%;left:52%;width:44%;height:44%;background:var(--emerald);"></div>
+      <div class="q-zone" style="top:52%;left:52%;width:44%;height:44%;background:var(--amber);"></div>
+      <!-- Dots -->
+      <div class="q-dot" style="top:22%;left:38%;">
+        <div class="dot-circle" style="background:var(--forest-mid);">SB</div>
+        <div class="dot-label">Stumpbuster</div>
+        <div class="dot-sublabel">B+ / 40 yrs</div>
+      </div>
+      <div class="q-dot" style="top:18%;left:72%;">
+        <div class="dot-circle" style="background:var(--forest-mid);">JW</div>
+        <div class="dot-label">J. Witkowsky</div>
+        <div class="dot-sublabel">B+ / 30 yrs</div>
+      </div>
+      <div class="q-dot" style="top:28%;left:55%;">
+        <div class="dot-circle" style="background:var(--sage);">RE</div>
+        <div class="dot-label">Rayzor's Edge</div>
+        <div class="dot-sublabel">B</div>
+      </div>
+      <div class="q-dot" style="top:72%;left:74%;">
+        <div class="dot-circle" style="background:var(--rust);">FTR</div>
+        <div class="dot-label" style="color:var(--rust); font-weight:700;">Fred's</div>
+        <div class="dot-sublabel">D+ / 28 yrs</div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:20px; color:var(--ink-muted); font-size:13px; font-style:italic;">Fred's is in the worst quadrant for growth: great reputation but low online visibility.<br>The good news: reputation is the hard part, and that's already earned.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: KEYWORDS ===== -->
+<section>
+  <div class="section-num">Section 06</div>
+  <h2 class="section-title">Keyword Opportunities</h2>
+  <p class="section-subtitle">High-value search terms to target for organic and paid traffic</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Keyword</th><th>Est. Monthly Searches</th><th>Competition</th><th>Google Ads CPC</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>tree removal branford ct</strong></td><td>50 &ndash; 100</td><td><span class="kw-competition kw-med"></span>Medium</td><td>$18 &ndash; $25</td></tr>
+        <tr><td>tree service branford ct</td><td>30 &ndash; 70</td><td><span class="kw-competition kw-med"></span>Medium</td><td>$15 &ndash; $22</td></tr>
+        <tr><td><strong>tree removal near me</strong> (local)</td><td>5,000+ (nat'l)</td><td><span class="kw-competition kw-high"></span>High</td><td>$25 &ndash; $45</td></tr>
+        <tr><td>stump grinding branford ct</td><td>20 &ndash; 40</td><td><span class="kw-competition kw-low"></span>Low</td><td>$12 &ndash; $18</td></tr>
+        <tr><td><strong>emergency tree removal ct</strong></td><td>100 &ndash; 200</td><td><span class="kw-competition kw-high"></span>High</td><td>$30 &ndash; $45</td></tr>
+        <tr><td>tree trimming branford ct</td><td>20 &ndash; 50</td><td><span class="kw-competition kw-med"></span>Low-Med</td><td>$12 &ndash; $20</td></tr>
+        <tr><td>tree removal east haven ct</td><td>30 &ndash; 50</td><td><span class="kw-competition kw-low"></span>Low</td><td>$15 &ndash; $22</td></tr>
+        <tr><td>tree removal guilford ct</td><td>20 &ndash; 40</td><td><span class="kw-competition kw-low"></span>Low</td><td>$15 &ndash; $20</td></tr>
+        <tr><td>arborist branford ct</td><td>10 &ndash; 30</td><td><span class="kw-competition kw-low"></span>Low</td><td>$10 &ndash; $15</td></tr>
+        <tr><td>lot clearing ct</td><td>50 &ndash; 100</td><td><span class="kw-competition kw-med"></span>Medium</td><td>$18 &ndash; $25</td></tr>
+        <tr><td>hazardous tree removal ct</td><td>20 &ndash; 50</td><td><span class="kw-competition kw-low"></span>Low</td><td>$20 &ndash; $30</td></tr>
+        <tr><td>storm damage tree removal ct</td><td>50 &ndash; 150 (seasonal)</td><td><span class="kw-competition kw-med"></span>Medium</td><td>$25 &ndash; $40</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Long-Tail Opportunities</h3>
+  <p style="font-size:14px; color:var(--ink-light); margin-bottom:12px;">Lower competition, high buyer intent &mdash; great for blog content and FAQ pages:</p>
+  <div class="longtail-list">
+    <span class="lt-chip">"how much does tree removal cost in ct"</span>
+    <span class="lt-chip">"tree removal permit branford ct"</span>
+    <span class="lt-chip">"when to remove a dead tree"</span>
+    <span class="lt-chip">"tree fell on house what to do ct"</span>
+    <span class="lt-chip">"best time to trim trees in connecticut"</span>
+  </div>
+</section>
+
+<!-- ===== SECTION 7: IMPROVEMENTS & PRICING ===== -->
+<section>
+  <div class="section-num">Section 07</div>
+  <h2 class="section-title">Recommended Improvements &amp; Pricing</h2>
+  <p class="section-subtitle">Prioritized tiers from critical fixes to growth accelerators</p>
+
+  <!-- TIER 1 -->
+  <div class="tier">
+    <div class="tier-header">
+      <h3><span class="tier-num">TIER 1</span> Critical Fixes (Do Immediately)</h3>
+      <span class="tier-cost">$1,500 &ndash; $3,000 one-time</span>
+    </div>
+    <table>
+      <thead><tr><th>Task</th><th>Est. Cost</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>Fix H1 tags on all pages</td><td>$200 &ndash; $400</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Write proper meta titles &amp; descriptions for all 15 pages</td><td>$300 &ndash; $500</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Add full NAP to header/footer with schema</td><td>$200 &ndash; $400</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Remove /sample-page/</td><td>$0 (DIY)</td><td><span class="badge badge-low">Low</span></td></tr>
+        <tr><td>Fix business name consistency across all directories</td><td>$300 &ndash; $500</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Add click-to-call phone number in header</td><td>$100 &ndash; $200</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Add LocalBusiness structured data (JSON-LD)</td><td>$200 &ndash; $400</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Submit updated sitemap to Google Search Console</td><td>$0 (DIY)</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TIER 2 -->
+  <div class="tier">
+    <div class="tier-header">
+      <h3><span class="tier-num">TIER 2</span> Content &amp; On-Page Optimization</h3>
+      <span class="tier-cost">$3,000 &ndash; $6,000 one-time</span>
+    </div>
+    <table>
+      <thead><tr><th>Task</th><th>Est. Cost</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>Rewrite homepage with keyword-rich content (500+ words)</td><td>$500 &ndash; $800</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td>Create 5-6 detailed service pages (600+ words each)</td><td>$1,500 &ndash; $2,500</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td>Consolidate duplicate location pages (1 strong page per town)</td><td>$400 &ndash; $600</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Add 5-8 missing town pages</td><td>$800 &ndash; $1,200</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Create FAQ page targeting voice search</td><td>$300 &ndash; $500</td><td><span class="badge badge-medium">Medium</span></td></tr>
+        <tr><td>Add testimonials/reviews page with Google feed</td><td>$300 &ndash; $500</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TIER 3 -->
+  <div class="tier">
+    <div class="tier-header">
+      <h3><span class="tier-num">TIER 3</span> Technical Performance</h3>
+      <span class="tier-cost">$2,000 &ndash; $5,000 one-time</span>
+    </div>
+    <table>
+      <thead><tr><th>Task</th><th>Est. Cost</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>Migrate from Divi to lightweight theme or optimize Divi</td><td>$1,500 &ndash; $3,000</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Image optimization (compress, alt tags, lazy loading)</td><td>$200 &ndash; $500</td><td><span class="badge badge-medium">Medium</span></td></tr>
+        <tr><td>Implement caching plugin (WP Rocket or similar)</td><td>$100 &ndash; $200</td><td><span class="badge badge-medium">Medium</span></td></tr>
+        <tr><td>Core Web Vitals optimization</td><td>$500 &ndash; $1,000</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Add SSL-forced redirect if not present</td><td>$0 &ndash; $100</td><td><span class="badge badge-low">Low</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TIER 4 -->
+  <div class="tier">
+    <div class="tier-header">
+      <h3><span class="tier-num">TIER 4</span> Ongoing SEO &amp; Content Marketing</h3>
+      <span class="tier-cost">$800 &ndash; $2,000 / month</span>
+    </div>
+    <table>
+      <thead><tr><th>Task</th><th>Est. Monthly Cost</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>Monthly blog posts (2-4 articles)</td><td>$400 &ndash; $800</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Google Business Profile optimization &amp; weekly posts</td><td>$200 &ndash; $400</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Review generation campaign</td><td>$100 &ndash; $200</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td>Local link building</td><td>$200 &ndash; $400</td><td><span class="badge badge-medium">Medium</span></td></tr>
+        <tr><td>Monthly SEO reporting &amp; adjustments</td><td>$200 &ndash; $400</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TIER 5 -->
+  <div class="tier">
+    <div class="tier-header">
+      <h3><span class="tier-num">TIER 5</span> Optional Growth Accelerators</h3>
+      <span class="tier-cost">Varies</span>
+    </div>
+    <table>
+      <thead><tr><th>Task</th><th>Est. Cost</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>Google Local Services Ads campaign</td><td>$500 &ndash; $1,500/mo + $300-500 mgmt</td><td><span class="badge badge-critical">Immediate</span></td></tr>
+        <tr><td>Before/after photo gallery page</td><td>$300 &ndash; $500 one-time</td><td><span class="badge badge-medium">Medium</span></td></tr>
+        <tr><td>Video content (drone footage)</td><td>$500 &ndash; $1,500 one-time</td><td><span class="badge badge-medium">Medium</span></td></tr>
+        <tr><td>Social media content strategy</td><td>$300 &ndash; $600/mo</td><td><span class="badge badge-low">Low-Med</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== SECTION 8: INVESTMENT & ROI ===== -->
+<section>
+  <div class="section-num">Section 08</div>
+  <h2 class="section-title">Investment Summary &amp; ROI Projection</h2>
+  <p class="section-subtitle">Three budget scenarios with projected returns</p>
+
+  <div class="invest-grid">
+    <div class="invest-card">
+      <div class="invest-card-header">
+        <div class="option-label">OPTION A</div>
+        <h4>DIY / Minimal Budget</h4>
+      </div>
+      <div class="invest-card-prices">
+        <div class="price-block">
+          <div class="price-label">One-time</div>
+          <div class="price-value">$1,500 &ndash; $3,000</div>
+        </div>
+        <div class="price-block">
+          <div class="price-label">Monthly</div>
+          <div class="price-value">$0</div>
+        </div>
+      </div>
+      <div class="invest-card-body">
+        <ul>
+          <li>Fix critical technical issues (Tier 1)</li>
+          <li>Owner handles content updates</li>
+        </ul>
+      </div>
+      <div class="invest-card-impact">15 &ndash; 25% traffic increase in 3-6 months</div>
+    </div>
+
+    <div class="invest-card recommended">
+      <div class="invest-card-header">
+        <div class="option-label">OPTION B</div>
+        <h4>Moderate Investment</h4>
+      </div>
+      <div class="invest-card-prices">
+        <div class="price-block">
+          <div class="price-label">One-time</div>
+          <div class="price-value">$5,000 &ndash; $10,000</div>
+        </div>
+        <div class="price-block">
+          <div class="price-label">Monthly</div>
+          <div class="price-value">$800 &ndash; $1,500</div>
+        </div>
+      </div>
+      <div class="invest-card-body">
+        <ul>
+          <li>Tiers 1 + 2 + partial Tier 3</li>
+          <li>Ongoing blog content &amp; GBP management</li>
+          <li>10 &ndash; 25 additional leads/month</li>
+        </ul>
+      </div>
+      <div class="invest-card-impact">50 &ndash; 100% traffic increase in 6-12 months</div>
+    </div>
+
+    <div class="invest-card">
+      <div class="invest-card-header">
+        <div class="option-label">OPTION C</div>
+        <h4>Aggressive Growth</h4>
+      </div>
+      <div class="invest-card-prices">
+        <div class="price-block">
+          <div class="price-label">One-time</div>
+          <div class="price-value">$8,000 &ndash; $15,000</div>
+        </div>
+        <div class="price-block">
+          <div class="price-label">Monthly</div>
+          <div class="price-value">$1,500 &ndash; $3,500</div>
+        </div>
+      </div>
+      <div class="invest-card-body">
+        <ul>
+          <li>All tiers including Google Ads</li>
+          <li>Full content marketing program</li>
+          <li>25 &ndash; 50+ additional leads/month</li>
+        </ul>
+      </div>
+      <div class="invest-card-impact">100 &ndash; 200%+ traffic increase in 6-12 months</div>
+    </div>
+  </div>
+
+  <div class="roi-callout">
+    <div>
+      <div class="roi-big">2&ndash;7x</div>
+      <div class="roi-label">Estimated Annual ROI (Option B)</div>
+    </div>
+    <div class="roi-detail">
+      <strong>The math:</strong> Average tree removal job in CT is $1,200 &ndash; $3,500. With a 25-35% close rate from web leads, each lead is worth $300 &ndash; $1,200. Option B targets 10-25 additional leads/month, generating $3,000 &ndash; $18,000 in additional monthly revenue against an annual investment of $15,000 &ndash; $28,000.
+    </div>
+  </div>
+
+  <h3>ROI Breakdown</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th>Estimate</th></tr></thead>
+      <tbody>
+        <tr><td>Average tree removal job in CT</td><td><strong>$1,200 &ndash; $3,500</strong></td></tr>
+        <tr><td>Average close rate from web leads</td><td>25 &ndash; 35%</td></tr>
+        <tr><td>Value per web lead</td><td>$300 &ndash; $1,200</td></tr>
+        <tr><td>Current estimated organic leads/month</td><td>5 &ndash; 10 (low)</td></tr>
+        <tr><td>Target organic leads/month (Option B)</td><td>20 &ndash; 35</td></tr>
+        <tr><td>Additional monthly revenue potential</td><td><strong>$3,000 &ndash; $18,000</strong></td></tr>
+        <tr><td>Annual SEO investment (Option B)</td><td>$15,000 &ndash; $28,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== SECTION 9: ACTION PLAN ===== -->
+<section>
+  <div class="section-num">Section 09</div>
+  <h2 class="section-title">Priority Action Plan</h2>
+  <p class="section-subtitle">A 12-month roadmap from foundation to scale</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>Month 1 &mdash; Foundation</h4>
+      <ul>
+        <li>Fix all technical SEO issues (Tier 1)</li>
+        <li>Set up Google Search Console &amp; Google Analytics 4</li>
+        <li>Claim/verify Google Business Profile ownership</li>
+        <li>Fix NAP consistency across all directories</li>
+        <li>Remove /sample-page/</li>
+        <li>Add phone number + CTA to every page header</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <h4>Months 2&ndash;3 &mdash; Content Build-Out</h4>
+      <ul>
+        <li>Rewrite homepage with proper content &amp; keywords</li>
+        <li>Create 5-6 detailed service pages</li>
+        <li>Consolidate duplicate location pages</li>
+        <li>Add FAQ page</li>
+        <li>Add reviews/testimonials page</li>
+        <li>Start blog (2 posts/month)</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <h4>Months 4&ndash;6 &mdash; Growth Phase</h4>
+      <ul>
+        <li>Add remaining town landing pages</li>
+        <li>Implement GBP posting schedule (weekly)</li>
+        <li>Launch review generation campaign</li>
+        <li>Begin local link building</li>
+        <li>Consider Google Local Services Ads</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <h4>Months 7&ndash;12 &mdash; Scale &amp; Optimize</h4>
+      <ul>
+        <li>Continue content marketing (blog, seasonal content)</li>
+        <li>Analyze rankings &amp; adjust keyword targeting</li>
+        <li>A/B test CTAs and landing pages</li>
+        <li>Expand service area pages based on demand</li>
+        <li>Track ROI and adjust spend accordingly</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 10: TAKEAWAYS ===== -->
+<section>
+  <div class="section-num">Section 10</div>
+  <h2 class="section-title">Key Takeaways</h2>
+
+  <div class="takeaway">
+    <div class="takeaway-num">1</div>
+    <div class="takeaway-text"><strong>Fred's has a reputation advantage</strong> (28 years, 4.9 rating, A+ BBB) that the website completely fails to leverage.</div>
+  </div>
+  <div class="takeaway">
+    <div class="takeaway-num">2</div>
+    <div class="takeaway-text"><strong>The website is essentially invisible to Google</strong> due to missing headings, thin content, and technical issues.</div>
+  </div>
+  <div class="takeaway">
+    <div class="takeaway-num">3</div>
+    <div class="takeaway-text"><strong>Competitors are eating Fred's lunch online</strong> &mdash; J. Witkowsky and Stumpbuster have far stronger web presences targeting the same service area.</div>
+  </div>
+  <div class="takeaway">
+    <div class="takeaway-num">4</div>
+    <div class="takeaway-text"><strong>The location pages added in 2025 were a good start</strong> but have execution issues (duplication, possible thin content).</div>
+  </div>
+  <div class="takeaway">
+    <div class="takeaway-num">5</div>
+    <div class="takeaway-text"><strong>The ROI on fixing this is very strong</strong> &mdash; even a moderate investment should pay for itself within 3-6 months through additional leads.</div>
+  </div>
+  <div class="takeaway">
+    <div class="takeaway-num">6</div>
+    <div class="takeaway-text"><strong>The business name inconsistency</strong> (&ldquo;Fred's Tree Removal&rdquo; vs &ldquo;Fred's Landscape &amp; Tree Removal LLC&rdquo;) is hurting local SEO and must be standardized.</div>
+  </div>
+</section>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="report-footer">
+  <div class="container">
+    <p style="margin-bottom:4px;"><strong style="color:#fff;">SEO Audit Report</strong> &mdash; Fred's Tree Removal CT</p>
+    <p style="margin-bottom:20px;">Prepared February 2026. Market data based on industry averages and publicly available information.<br>Actual keyword volumes and CPC rates should be verified with Google Keyword Planner or SEMrush.</p>
+
+    <p style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--sage); margin-bottom:8px;">Sources</p>
+    <div class="sources-grid">
+      <a href="https://fredstreeremovalct.com">Fred's Tree Removal Website</a>
+      <a href="https://www.bbb.org/us/ct/branford/profile/tree-service/freds-tree-removal-0111-64007533">Fred's BBB Profile</a>
+      <a href="https://www.angi.com/companylist/us/ct/branford/fred's-landscape-and-tree-removal-llc-reviews-4447270.htm">Fred's Angi Profile</a>
+      <a href="https://jwitkowskytree.com/">J. Witkowsky &amp; Sons</a>
+      <a href="https://stumpbuster.com/">Stumpbuster LLC</a>
+      <a href="https://serpwars.com/tree-service-keywords/">SerpWars &mdash; Tree Service Keywords 2026</a>
+      <a href="https://searchstrategymarketing.com/cost-of-local-seo-for-tree-trimmers/">Search Strategy &mdash; Local SEO Costs 2026</a>
+      <a href="https://resultcalls.com/blog/tree-service-seo-guide-how-to-rank-1">ResultCalls &mdash; Tree Service SEO Guide</a>
+      <a href="https://gorilladesk.com/learn/tree-service-marketing-ideas/">GorrillaDesk &mdash; Tree Service Marketing</a>
+      <a href="https://www.homeadvisor.com/c.Tree-Service.Branford.CT.-12074.html">HomeAdvisor &mdash; Branford Tree Services</a>
+      <a href="https://www.expertise.com/home-improvement/tree-services/connecticut/new-haven">Expertise.com &mdash; New Haven Tree Services</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
